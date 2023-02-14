@@ -1,10 +1,14 @@
-import discord
 import os
-from reddit import Reddit
 import random
+
+import discord
+from dotenv import load_dotenv
+
+from reddit import Reddit
 import database
 import web_server
 
+load_dotenv()
 
 TOKEN = os.environ['TOKEN']
 
@@ -17,7 +21,7 @@ TOKEN = os.environ['TOKEN']
 # ]
 # bruh_responses += database.database("bruh_responses", return_empty=True)
 
-client = discord.Client()
+client = discord.Client(intents=discord.Intents.default())
 
 
 
